@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NearbyPlaces</string>
+    <string name="nearby_restaurants">Restaurants</string>
+    <string name="nearby_hospitals">Hospitals</string>
+    <string name="nearby_schools">Schools</string>
+    <string name="title_activity_maps">Nearby Places</string>
+    <string name="finding_nearby_hospitals">Finding Nearby Hospitals</string>
+    <string name="finding_nearby_restaurants">Finding Nearby Restaurants</string>
+    <string name="finding_nearby_schools">Finding Nearby Schools</string>
+</resources>
