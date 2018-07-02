@@ -58,48 +58,5 @@
             android:layout_weight="0.25"
             />
     </LinearLayout>
-
-        <LinearLayout
-            android:layout_below="@+id/linearLayout2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:orientation="horizontal"
-            android:layout_marginTop="-27dp"
-            >
-            <TextView
-                android:id="@+id/resturantTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/nearby_restaurants"
-                android:textColor="@color/primary_text"
-                android:layout_weight="0.25"
-                android:textSize="15sp"
-                android:textAlignment="center"
-
-                />
-
-            <TextView
-                android:id="@+id/hospitalTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/nearby_hospitals"
-                android:textColor="@color/primary_text"
-                android:layout_weight="0.25"
-                android:textAlignment="center"
-                android:textSize="15sp"
-                />
-
-            <TextView
-                android:id="@+id/schoolTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/nearby_schools"
-                android:textColor="@color/primary_text"
-                android:layout_weight="0.25"
-                android:textAlignment="center"
-                android:textSize="15sp"
-                />
-        </LinearLayout>
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
