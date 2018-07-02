@@ -60,7 +60,7 @@ public class GetNearbyPlacesData extends AsyncTask<Object, String, String> {
             String vicinity = googlePlace.get("vicinity");
             LatLng latLng = new LatLng(lat, lng);
             markerOptions.position(latLng);
-            markerOptions.title(placeName + " : " + vicinity);
+            markerOptions.title(placeName + " :" + vicinity);
             if(place.equals("restaurant")) {
                 markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN));
             }

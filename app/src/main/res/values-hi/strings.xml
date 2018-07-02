@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">निकटवर्ती स्थान</string>
+    <string name="nearby_restaurants">रेस्टोरेंट</string>
+    <string name="nearby_hospitals">अस्पताल</string>
+    <string name="nearby_schools">स्कूल</string>
+    <string name="title_activity_maps">निकटवर्ती स्थान</string>
+    <string name="finding_nearby_hospitals">आसपास के अस्पताल खोजें</string>
+    <string name="finding_nearby_restaurants">आसपास के रेस्टोरेंट खोजना</string>
+    <string name="finding_nearby_schools">आसपास के स्कूल खोजें</string>
+</resources>
