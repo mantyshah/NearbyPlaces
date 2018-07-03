@@ -47,7 +47,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private void onPermissionCheck() {
 
         if (Build.VERSION.SDK_INT < 23) {
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
+                ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
@@ -62,14 +63,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                 LatLng cureentLocation = new LatLng(location.getLatitude(), location.getLongitude());
                                 mMap.addMarker(new MarkerOptions().position(cureentLocation)
                                         .title("Current Location")
-                                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+                                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
                                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cureentLocation, 15));
                             }
 
                         }
                     });
         } else {
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                 && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
                 mFusedLocationClient.getLastLocation()
                         .addOnSuccessListener(this, new OnSuccessListener<Location>() {
@@ -80,7 +82,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                     latitude = location.getLatitude();
                                     longitude = location.getLongitude();
                                     LatLng cureentLocation = new LatLng(location.getLatitude(), location.getLongitude());
-                                    mMap.addMarker(new MarkerOptions().position(cureentLocation).title("Current Location"));
+                                    mMap.addMarker(new MarkerOptions().position(cureentLocation)
+                                            .title("Current Location")
+                                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
                                     mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cureentLocation, 15));
                                 }
 
@@ -97,7 +101,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                     latitude = location.getLatitude();
                                     longitude = location.getLongitude();
                                     LatLng cureentLocation = new LatLng(location.getLatitude(), location.getLongitude());
-                                    mMap.addMarker(new MarkerOptions().position(cureentLocation).title("Current Location"));
+                                    mMap.addMarker(new MarkerOptions().position(cureentLocation)
+                                            .title("Current Location")
+                                            .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
                                     mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cureentLocation, 15));
                                 }
 
@@ -120,7 +126,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        ImageButton btnRestaurant = (ImageButton) findViewById(R.id.btnRestaurant);
+        mMap.setInfoWindowAdapter(new CustomInfoWIndow(getApplicationContext()));
+        ImageButton btnRestaurant = findViewById(R.id.btnRestaurant);
         btnRestaurant.setOnClickListener(new View.OnClickListener() {
             String Restaurant = "restaurant";
             @Override
